@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader</title>
+    <link rel="stylesheet" href="ram.css">
+</head>
+<body>
+     <section id="home">
+    <header>
+        <h1>Media Downloader</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-to">Download</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="https://www.instagram.com/naresh_kasimkota" target="_blank" rel="noopener noreferrer">
+                        <img src="instagram-logo.png" alt="Instagram" class="social-logo">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+    </header>
+    <main>
+    <h1>Download Video</h1>
+
+       
+    <form id="download-form">
+        <label for="link">Video URL:</label>
+        <input type="text" id="link" name="link" placeholder="Paste the video URL here.." required> 
+        <br>
+        
+        <button type="submit">Download</button>
+    </form>
+   </main>
+   </section>
+   <section id="how-to">
+   <p class="instruction-highlight">Follow the steps below to download videos:</p>
+<ol>
+    <li><span>Copy the URL of the video you want to download.</span></li>
+    <li><span>Paste the URL in the input field below.</span></li>
+    <li><span>Click the "Download" button to start downloading.</span></li>
+    <li><span>Follow the prompts to save the video to your device.</span></li>
+</ol>
+</section>
+
+<div><!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p><span>Welcome to Media Downloader! I'm Naresh, a dedicated developer on a mission to create intuitive applications that simplify your media experience. My focus is on delivering clean, efficient code and leveraging modern technologies to ensure a seamless download experience for all users.</span></p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p><span>Have questions or need assistance? I'm here to help!</span></p>
+        <p><span><a href="mailto:nareshkasimkota0@gmail.com">Feel free to Email Me</a></span></p>
+    </section>
+</div>
+<section id="features">
+    <h2>Features of Media Downloader</h2>
+    <div class="feature">
+        <h3>Easy to Use</h3>
+        <p>Our user-friendly interface allows you to download videos with just a few clicks. Simply paste the URL, and you’re ready to go!</p>
+    </div>
+    <div class="feature">
+        <h3>Multiple Format Support</h3>
+        <p>Download videos in various formats, including MP4, AVI, and more, to suit your needs. Enjoy flexibility with every download.</p>
+    </div>
+    <div class="feature">
+        <h3>Fast Download Speed</h3>
+        <p>Experience lightning-fast download speeds without compromising quality. Get your videos quickly and efficiently.</p>
+    </div>
+    <div class="feature">
+        <h3>Secure and Reliable</h3>
+        <p>Your privacy is our priority. Media Downloader ensures a secure connection and reliable downloads every time.</p>
+    </div>
+    <div class="feature">
+        <h3>Multi-Platform Compatibility</h3>
+        <p>Use Media Downloader on any device—Windows, Mac, or Linux. Enjoy seamless functionality across all platforms.</p>
+    </div>
+    <div class="feature">
+        <h3>Regular Updates</h3>
+        <p>We’re constantly improving the application with regular updates and new features based on user feedback. Stay tuned for the latest enhancements!</p>
+    </div>
+</section>
+
+
+   <footer>
+    <p>&copy; 2024 Media Downloader. All rights reserved.</p>
+</footer>
+
+    <script>
+        document.getElementById('download-form').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            const formData = new FormData(event.target);
+            const response = await fetch('http://localhost:8000/download',{
+                  method: 'POST',
+                  body: formData    
+                
+            });
+
+            if (response.ok) {
+               const result = await response.json();
+               console.log('Response:',result);
+            }
+            else{
+                console.error('Error:',response.statusText);
+            }
+        });
+    </script>
+</body>
+</html>

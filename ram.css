@@ -1,0 +1,273 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #0f3d99; /* Primary color */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #100f0f; /* Dark background for the navbar */
+    padding: 10px 0; /* Reduced padding for top and bottom */
+    max-width: 800px; /* Maximum width for the navbar */
+    margin: 0 auto; /* Centering the navbar */
+    border-radius: 25px; /* Rounded edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+nav ul {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: center; /* Center items within the navbar */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    list-style: none; /* Remove bullet points */
+}
+
+nav ul li {
+    margin: 0 10px; /* Reduced space between items */
+}
+
+nav a {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Padding for links */
+    border-radius: 20px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions for hover effects */
+    display: flex; /* Enable flex for centering */
+    align-items: center; /* Center text vertically */
+}
+
+nav a:hover {
+    background-color: #3f4a42; /* Darker background color on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.social-logo {
+    width: 25x; /* Size of the social logo */
+    height: 25px; /* Size of the social logo */
+    vertical-align: middle; /* Align logo with text */
+}
+
+
+.main-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    height: 80vh; /* Take 80% of the viewport height */
+}
+
+main {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    margin: 0 0 10px;
+    color: #5ef711; /* Primary heading color */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: 2px solid #24881f;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+    font-size: 16px;
+    width: 100%; /* Full width of the form */
+}
+
+input[type="text"]:focus {
+    border-color: #5beb37; /* Focused border color */
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    background-color: #2eff43;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Full width button */
+}
+
+button:hover {
+    background-color: #67eb37; /* Hover color for button */
+    transform: translateY(-2px);
+}
+
+/* Centering and highlighting the instructions paragraph */
+.instruction-highlight {
+    background-color: #ffe5b4; /* Light background for highlight */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Make the text bold */
+    margin: 20px 0; /* Spacing above and below */
+}
+
+ol {
+    margin: 20px auto; /* Center the ordered list */
+    padding-left: 0; /* Remove left padding */
+    list-style: none; /* Remove default numbering */
+    text-align: center; /* Center the text */
+    counter-reset: item; /* Reset the counter for custom numbering */
+}
+
+ol li {
+    margin-bottom: 10px; /* Space between list items */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    font-size: 18px; /* Font size for readability */
+    line-height: 1.5; /* Line height for readability */
+}
+
+ol li::before {
+    content: counter(item) ". "; /* Add custom counter */
+    counter-increment: item; /* Increment counter for each list item */
+    color: #0f3d99;/* Color of the numbers */
+    font-weight: bold; /* Make numbers bold */
+    margin-right: 5px; /* Space between number and text */
+}
+ol li span {
+    display: inline-block; /* Make span behave like a block element */
+    width: 250px; /* Fixed width for uniformity */
+    text-align: center; /* Center align text */
+    padding: 5px; /* Padding for better appearance */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    border-radius: 4px; /* Optional rounded corners */
+}
+
+
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #eef2ff; /* Light background for sections */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text in sections */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color:  #0f3d99;/* Same color as header */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Space out items */
+    }
+
+    main {
+        margin: 10px;
+    }
+}
+section {
+    margin: 20px auto; /* Center the section */
+    padding: 20px; /* Padding for inner spacing */
+    background-color: #ffffff; /* White background for sections */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+section h2 {
+    text-align: center; /* Center the section title */
+    color: #0f3d99; /* Title color */
+}
+
+section p {
+    text-align: center; /* Center align paragraph text */
+}
+
+section p span {
+    display: inline-block; /* Allow for padding and background color */
+    width: 80%; /* Adjust width for uniform appearance */
+    margin: 10px auto; /* Center the span */
+    padding: 10px; /* Padding for better appearance */
+    background-color: #f0f8ff; /* Light background color */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+#features {
+    max-width: 800px; /* Max width for the features section */
+    margin: 20px auto; /* Center the section */
+    padding: 20px; /* Inner padding */
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+#features h2 {
+    text-align: center; /* Center align the title */
+    color:  #0f3d99; /* Title color */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.feature {
+    margin-bottom: 20px; /* Space between features */
+    padding: 15px; /* Inner padding for each feature */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #f0f8ff; /* Light background color for features */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.feature h3 {
+    color: #333; /* Color for feature titles */
+    margin-bottom: 10px; /* Space below feature title */
+}
+
+.feature p {
+    color: #555; /* Color for feature descriptions */
+    line-height: 1.6; /* Increase line height for readability */
+}
+
+/* Optional: Link styling */
+#contact a {
+    color:  #0f3d99; /* Link color */
+    font-weight: bold; /* Bold text for links */
+    text-decoration: none; /* Remove underline */
+}
+
+#contact a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
