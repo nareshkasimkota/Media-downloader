@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Form
 from fastapi.middleware.cors import CORSMiddleware
 import os
+import sys
 import yt_dlp
 
 app = FastAPI()
@@ -29,3 +30,4 @@ def download_video(link: str = Form(...)):
         ydl.download([link])
     
     return {"status": "Download started", "message": f"Video from {link} is being downloaded"}
+ 

@@ -15,6 +15,7 @@ header {
 }
 
 nav {
+    display: flex; 
     background-color: #100f0f; /* Dark background for the navbar */
     padding: 10px 0; /* Reduced padding for top and bottom */
     max-width: 800px; /* Maximum width for the navbar */
@@ -32,8 +33,10 @@ nav ul {
 }
 
 nav ul li {
+    display: flex; 
     margin: 0 10px; /* Reduced space between items */
 }
+
 
 nav a {
     color: white; /* Text color */
@@ -188,14 +191,24 @@ footer {
 
 /* Responsive styles */
 @media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        max-width: 100%; /* Allow full width for mobile */
+    }
     nav ul {
         flex-direction: column; /* Stack items vertically on small screens */
+         align-items: center;
     }
 
     nav ul li {
-        margin: 10px 0; /* Space out items */
+        text-align:center
+        margin: 5px 0; /* Space out items */
+        width:100%
     }
-
+    nav a {
+        width: 100%; /* Make links full width */
+        justify-content: center; /* Center content horizontally */
+    }
     main {
         margin: 10px;
     }
