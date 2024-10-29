@@ -18,6 +18,15 @@ app.add_middleware(
 # Get the current directory
 cur_dir = os.getcwd()
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Media Downloader!"}
+
+@app.get("/favicon.ico")
+async def favicon():
+    return {}  # You can serve a favicon here if you have one
+
+
 @app.post("/download")
 def download_video(link: str = Form(...)):
     youtube_dl_options = {
