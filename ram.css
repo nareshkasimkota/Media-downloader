@@ -17,8 +17,8 @@ header {
 nav {
     display: flex; 
     background-color: #100f0f; /* Dark background for the navbar */
-    padding: 10px 0; /* Reduced padding for top and bottom */
-    max-width: 800px; /* Maximum width for the navbar */
+    padding: 8px 0; /* Reduced padding for top and bottom */
+    max-width: 600px; /* Maximum width for the navbar */
     margin: 0 auto; /* Centering the navbar */
     border-radius: 25px; /* Rounded edges */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
@@ -194,6 +194,7 @@ footer {
     nav {
         flex-direction: column; /* Stack items vertically */
         max-width: 100%; /* Allow full width for mobile */
+        padding:0px 0;
     }
     nav ul {
         flex-direction: column; /* Stack items vertically on small screens */
@@ -201,9 +202,7 @@ footer {
     }
 
     nav ul li {
-        text-align:center
         margin: 5px 0; /* Space out items */
-        width:100%
     }
     nav a {
         width: 100%; /* Make links full width */

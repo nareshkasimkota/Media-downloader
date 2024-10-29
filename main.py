@@ -1,7 +1,8 @@
-from fastapi import FastAPI, Form
+from fastapi import FastAPI, Form,Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 import os
-import sys
 import yt_dlp
 
 app = FastAPI()
@@ -15,17 +16,15 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
+# Initialize Jinja2 templates
+templates = Jinja2Templates(directory="templates")
+
 # Get the current directory
 cur_dir = os.getcwd()
 
-@app.get("/")
-def read_root():
-    return {"message": "Welcome to the Media Downloader!"}
-
-@app.get("/favicon.ico")
-async def favicon():
-    return {}  # You can serve a favicon here if you have one
-
+@app.get("/", response_class=HTMLResponse)
+async def read_root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/download")
 def download_video(link: str = Form(...)):
