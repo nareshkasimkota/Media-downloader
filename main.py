@@ -8,9 +8,13 @@ import yt_dlp
 app = FastAPI()
 
 # CORS configuration
+origins = [
+    "http://127.0.0.1:5500",  # Add your frontend origin here
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins; you can specify a list of allowed origins
+    allow_origins=origins,  # Allows all origins; you can specify a list of allowed origins
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods {GET, POST, etc.}
     allow_headers=["*"],  # Allows all headers
